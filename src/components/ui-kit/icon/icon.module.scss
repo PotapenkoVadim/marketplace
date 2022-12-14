@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.icon { display: block; -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; width: 20px; height: 20px;
+  &__bag { -webkit-mask-image: url(../../../static/bag.svg); }
+
+  &_white { background-color: $white; }
+  &_red { background-color: red; }
+}
+
+.rounded-icon { display: inline-block; border-radius: 50%; background-color: $accent;
+  &_small { padding: 12px; }
+  &_large { padding: 17px; }
+}

@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.layout { 
+  &__header { padding: 35px 0; }
+  &__container { display: flex; align-items: center; justify-content: space-between; }
+  &__logo { width: 200px; height: 30px; }
+  &__navigation { flex: 2; padding: 0 110px; }
+  &__actions { flex: 1; }
+  &__avatar { padding-left: 20px; }
+}

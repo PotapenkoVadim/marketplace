@@ -1,0 +1,9 @@
+@mixin background-image-settings-common {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@mixin transition-common {
+  transition: all 0.2s ease-in;
+}

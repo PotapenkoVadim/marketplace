@@ -33,6 +33,7 @@ module.exports = (env, argv) => {
         'react': 'preact/compat',
         'react-dom': 'preact/compat',
         'react-router': 'preact-router',
+        '@': path.resolve(__dirname, 'src/'),
         '@components': path.resolve(__dirname, 'src/components/'),
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@uikit': path.resolve(__dirname, 'src/components/ui-kit'),
