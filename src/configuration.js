@@ -21,4 +21,26 @@ export const configuration = {
       path: '/contact',
     },
   ],
+  additionalRoutes: [
+    {
+      name: 'Our Mobile App',
+      path: '#'
+    },
+    {
+      name: 'Frequently Asked Questions',
+      path: '#'
+    },
+    {
+      name: 'Help Desk',
+      path: '#'
+    },
+    {
+      name: 'Privacy Policy',
+      path: '#'
+    },
+    {
+      name: 'Terms and Conditions',
+      path: '#'
+    }
+  ]
 };

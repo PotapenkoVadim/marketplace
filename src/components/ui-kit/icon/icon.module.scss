@@ -3,12 +3,19 @@
 
 .icon { display: block; -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; width: 20px; height: 20px;
   &__bag { -webkit-mask-image: url(../../../static/bag.svg); }
+  &__facebook { -webkit-mask-image: url(../../../static/facebook.svg); }
+  &__twitter { -webkit-mask-image: url(../../../static/twitter.svg); }
+  &__instagram { -webkit-mask-image: url(../../../static/instagram.svg); }
+  &__linkedin { -webkit-mask-image: url(../../../static/linkedin.svg); }
 
   &_white { background-color: $white; }
-  &_red { background-color: red; }
+  &_accent { background-color: $accent; }
 }
 
-.rounded-icon { display: inline-block; border-radius: 50%; background-color: $accent;
+.rounded-icon { display: inline-block; border-radius: 50%;
   &_small { padding: 12px; }
   &_large { padding: 17px; }
+
+  &_accent { background-color: $accent; }
+  &_light { background-color: $light; }
 }

@@ -13,14 +13,14 @@ const routes = configuration.routes;
 export const LayoutHeader = () => {
   return (
     <header className={styles['layout__header']}>
-      <Container className={styles['layout__container']}>
+      <Container className={styles['layout__header-container']}>
         <div className={styles['layout__logo']}>
           <Logo />
         </div>
 
         <Navigation
           routes={routes}
-          className={styles['layout__navigation']} />
+          className={styles['layout__header-navigation']} />
 
         <div className={styles['layout__actions']}>
           <IconRounded variant='bag' color='white' size='large' />

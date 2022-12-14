@@ -6,4 +6,7 @@
     &:hover { color: $accent; }
     &_active { color: $accent; text-decoration: none !important; }
   }
+
+  &_row { flex-direction: row; }
+  &_col { flex-direction: column; }
 }
