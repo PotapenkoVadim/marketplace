@@ -24,23 +24,23 @@ export const configuration = {
   additionalRoutes: [
     {
       name: 'Our Mobile App',
-      path: '#'
+      path: '#',
     },
     {
       name: 'Frequently Asked Questions',
-      path: '#'
+      path: '#',
     },
     {
       name: 'Help Desk',
-      path: '#'
+      path: '#',
     },
     {
       name: 'Privacy Policy',
-      path: '#'
+      path: '#',
     },
     {
       name: 'Terms and Conditions',
-      path: '#'
-    }
-  ]
+      path: '#',
+    },
+  ],
 };

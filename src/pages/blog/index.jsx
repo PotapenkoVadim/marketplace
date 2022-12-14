@@ -1,5 +1,9 @@
+import { Container } from '@components/common/container';
+
 export const BlogPage = () => {
   return (
-    <h1>Marketplace Blog Page</h1>
+    <Container>
+      <h1>Marketplace Blog Page</h1>
+    </Container>
   );
 };

@@ -1,5 +1,10 @@
+import { Container } from '@components/common/container';
+import { HomePageIntroduce } from '@/components/pages/home/introduce';
+
 export const HomePage = () => {
   return (
-    <h1>Marketplace Home Page</h1>
+    <Container>
+      <HomePageIntroduce />
+    </Container>
   );
 };

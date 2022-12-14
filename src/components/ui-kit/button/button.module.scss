@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.button { outline: none; padding: 14px 24px; border-radius: 8px; border: none; cursor: pointer;
+  &_primary { background-color: $accent; color: $white; @include transition-common;
+    &:hover { background-color: rgba($accent, 0.85); }
+    &:active { background-color: rgba($accent, 0.5); }
+  }
+
+  &__link { color: $dark; cursor: pointer; @include transition-common;
+    &:hover { color: $accent; }
+    &:active { color: rgba($accent, 0.5); }
+  }
+}

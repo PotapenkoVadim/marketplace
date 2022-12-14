@@ -8,10 +8,10 @@
   }
 
   &__logo { width: 200px; height: 30px; }
-  &__actions { flex: 1; }
+  &__actions { flex: 1; display: flex; justify-content: flex-end; align-items: center; }
   &__avatar { padding-left: 20px; }
 
-  &__footer {
+  &__footer { margin-bottom: 85px;
     &-title { font-family: 'DM Sans'; margin-bottom: 25px; }
     &-container { display: flex; }
     &-navigation { align-items: flex-start !important; gap: 10px; }
