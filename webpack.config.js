@@ -30,8 +30,13 @@ module.exports = (env, argv) => {
     resolve: {
       extensions: ['.jsx', '.js'],
       alias: {
-        "react": "preact/compat",
-        "react-dom": "preact/compat"
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat',
+        'react-router': 'preact-router',
+        '@components': path.resolve(__dirname, 'src/components/'),
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@uikit': path.resolve(__dirname, 'src/components/ui-kit'),
+        '@store': path.resolve(__dirname, 'src/store/')
       }
     },
     plugins: [
