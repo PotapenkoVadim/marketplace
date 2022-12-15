@@ -2,7 +2,7 @@ export const configuration = {
   routes: [
     {
       name: 'Market Place',
-      path: '/',
+      path: '/market-place',
     },
     {
       name: 'Blog',

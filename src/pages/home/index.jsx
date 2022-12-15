@@ -1,10 +1,12 @@
-import { Container } from '@components/common/container';
-import { HomePageIntroduce } from '@/components/pages/home/introduce';
+import { HomePageIntroduce } from '@components/pages/home/introduce';
+import { HomePageProductList } from '@components/pages/home/product-list';
 
 export const HomePage = () => {
   return (
-    <Container>
+    <>
       <HomePageIntroduce />
-    </Container>
+      <HomePageProductList title='Our Top Deals' />
+      <HomePageProductList title='Best Selling Product' />
+    </>
   );
 };

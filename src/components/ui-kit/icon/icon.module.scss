@@ -7,8 +7,11 @@
   &__twitter { -webkit-mask-image: url(../../../static/twitter.svg); }
   &__instagram { -webkit-mask-image: url(../../../static/instagram.svg); }
   &__linkedin { -webkit-mask-image: url(../../../static/linkedin.svg); }
+  &__arrow-link { -webkit-mask-image: url(../../../static/arrow-link.svg); width: 24px; height: 24px; }
+  &__heart { -webkit-mask-image: url(../../../static/heart.svg); }
 
   &_white { background-color: $white; }
+  &_black { background-color: $black; }
   &_accent { background-color: $accent; }
 }
 

@@ -1,0 +1,7 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.badge { padding: 10px;  border-radius: 5px;
+  &_secondary { background-color: rgba($secondary, 0.1); color: $secondary; }
+  &_primary { background-color: rgba($accent, 0.1); color: $accent; }
+}

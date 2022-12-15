@@ -7,3 +7,13 @@
 @mixin transition-common {
   transition: all 0.2s ease-in;
 }
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  @include flex-align-center;
+  justify-content: space-between;
+}

@@ -1,14 +1,25 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-.button { outline: none; padding: 14px 24px; border-radius: 8px; border: none; cursor: pointer;
+.button { outline: none; border-radius: 8px; border: none; cursor: pointer;
   &_primary { background-color: $accent; color: $white; @include transition-common;
     &:hover { background-color: rgba($accent, 0.85); }
     &:active { background-color: rgba($accent, 0.5); }
   }
 
-  &__link { color: $dark; cursor: pointer; @include transition-common;
-    &:hover { color: $accent; }
-    &:active { color: rgba($accent, 0.5); }
+  &_large { padding: 14px 58px; }
+  &_small { padding: 14px 24px; }
+
+  &-link {  cursor: pointer; @include transition-common; text-decoration: none; @include flex-align-center; gap: 10px;
+    &_primary { color: $dark; }
+    &_black { color: $black; }
+    &__icon { @include transition-common; }
+    &:hover { color: $accent;
+      .button-link__icon { background-color: $accent; }
+    }
+
+    &:active { color: rgba($accent, 0.5);
+      .button-link__icon { background-color: rgba($accent, 0.5); }
+    }
   }
 }

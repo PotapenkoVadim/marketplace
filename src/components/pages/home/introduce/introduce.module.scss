@@ -3,10 +3,10 @@
 
 .introduce { display: flex; padding: 50px 0;
   &__info, &__poster-container { flex: 1; min-height: 600px; }
-  &__info { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  &__info {display: flex; align-items: flex-start; flex-direction: column; justify-content: center; }
   &__poster-container { position: relative; }
   &__poster { position: absolute !important; top: 0; right: -134px; width: 780px !important; height: 600px !important; }
   &__subtitle { font-weight: bold; }
   &__title { font-size: 4rem; margin: 24px 0; }
-  &__actions { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+  &__actions { @include flex-space-between; gap: 30px; }
 }
