@@ -11,7 +11,7 @@
   &__actions { flex: 1; @include flex-align-center; justify-content: flex-end; }
   &__avatar { padding-left: 20px; }
 
-  &__footer { margin-bottom: 85px;
+  &__footer { padding: 60px 0 85px;
     &-title { font-family: 'DM Sans'; margin-bottom: 25px; }
     &-container { display: flex; }
     &-navigation { align-items: flex-start !important; gap: 10px; }
