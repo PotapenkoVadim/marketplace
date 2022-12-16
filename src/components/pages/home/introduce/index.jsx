@@ -14,7 +14,7 @@ export const HomePageIntroduce = () => {
         <h1 className={styles['introduce__title']}>Filling up<br/>the spaces.</h1>
         <div className={styles['introduce__actions']}>
           <Button variant='primary'>Explore Marketplace</Button>
-          <ButtonLink>See Top Deals</ButtonLink>
+          <ButtonLink className={styles['introduce__link']}>See Top Deals</ButtonLink>
         </div>
       </Container>
 
