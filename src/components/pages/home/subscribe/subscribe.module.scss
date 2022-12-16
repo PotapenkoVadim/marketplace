@@ -7,4 +7,11 @@
   &__title { font-size: 3rem; margin-bottom: 10px; }
   &__subtitle { font-size: 1.25rem; margin-bottom: 25px; }
   &__button-field { max-width: 520px; }
+
+  @media (max-width: $tablet) {
+    &__title { font-size: 2rem; }
+    &__subtitle { font-size: 1rem; }
+  }
+
+  @media (max-width: $mobile) { padding: 75px 10px; text-align: center; }
 }

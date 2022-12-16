@@ -12,4 +12,8 @@
   &__placeholder { position: absolute; top: 50%; left: 5%; color: $grey; transform: translateY(-50%); @include transition-common; }
 
   &__field:focus ~ &__placeholder { font-size: 0.6rem; top: 18px; color: $accent; }
+
+  @media (max-width: $mobile-small) {
+    &__button { padding: 20px 0; }
+  }
 }
