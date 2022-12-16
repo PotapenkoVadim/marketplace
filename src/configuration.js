@@ -44,6 +44,6 @@ export const configuration = {
     },
   ],
   header: {
-    hidingClass: 'header_hide'
-  }
+    hidingClass: 'header_hide',
+  },
 };

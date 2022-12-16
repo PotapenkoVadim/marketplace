@@ -6,11 +6,17 @@ export function useHeaderHiding(headerRef) {
     let lastScroll = 0;
     const defaultOffset = 100;
 
-    const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
-    const containHide = () => headerRef.current.classList.contains(configuration.header.hidingClass);
+    const scrollPosition = () =>
+      window.pageYOffset || document.documentElement.scrollTop;
+    const containHide = () =>
+      headerRef.current.classList.contains(configuration.header.hidingClass);
 
-    function handleScroll () {
-      if (scrollPosition() > lastScroll && scrollPosition() > defaultOffset && !containHide()) {
+    function handleScroll() {
+      if (
+        scrollPosition() > lastScroll &&
+        scrollPosition() > defaultOffset &&
+        !containHide()
+      ) {
         headerRef.current.classList.add(configuration.header.hidingClass);
       } else if (scrollPosition() < lastScroll && containHide()) {
         headerRef.current.classList.remove(configuration.header.hidingClass);
