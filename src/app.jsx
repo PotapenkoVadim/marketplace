@@ -5,6 +5,7 @@ import { BlogPage } from '@pages/blog';
 import { AboutPage } from '@pages/about';
 import { PricingPage } from '@pages/pricing';
 import { ContactPage } from '@pages/contact';
+import { MarketPlacePage } from '@pages/market-place';
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
         <BlogPage path='/blog' />
         <PricingPage path='/pricing' />
         <ContactPage path='/contact' />
+        <MarketPlacePage path='/market-place' />
       </Router>
     </Layout>
   );
