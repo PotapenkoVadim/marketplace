@@ -1,24 +1,35 @@
+const homePage = DEVELOPMENT ? '/' : '/marketplace/';
+const paths = {
+  home: homePage,
+  marketplace: `${homePage}market-place`,
+  blog: `${homePage}blog`,
+  pricing: `${homePage}pricing`,
+  about: `${homePage}about`,
+  contact: `${homePage}contact`,
+};
+
 export const configuration = {
+  paths,
   routes: [
     {
       name: 'Market Place',
-      path: '/market-place',
+      path: paths.marketplace,
     },
     {
       name: 'Blog',
-      path: '/blog',
+      path: paths.blog,
     },
     {
       name: 'Pricing',
-      path: '/pricing',
+      path: paths.pricing,
     },
     {
       name: 'About',
-      path: '/about',
+      path: paths.about,
     },
     {
       name: 'Contact',
-      path: '/contact',
+      path: paths.contact,
     },
   ],
   additionalRoutes: [

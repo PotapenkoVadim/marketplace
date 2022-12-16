@@ -6,17 +6,20 @@ import { AboutPage } from '@pages/about';
 import { PricingPage } from '@pages/pricing';
 import { ContactPage } from '@pages/contact';
 import { MarketPlacePage } from '@pages/market-place';
+import { configuration } from './configuration';
+
+const paths = configuration.paths;
 
 export const App = () => {
   return (
     <Layout>
       <Router>
-        <HomePage path='/' />
-        <AboutPage path='/about' />
-        <BlogPage path='/blog' />
-        <PricingPage path='/pricing' />
-        <ContactPage path='/contact' />
-        <MarketPlacePage path='/market-place' />
+        <HomePage path={paths.home} />
+        <AboutPage path={paths.about} />
+        <BlogPage path={paths.blog} />
+        <PricingPage path={paths.pricing} />
+        <ContactPage path={paths.contact} />
+        <MarketPlacePage path={paths.marketplace} />
       </Router>
     </Layout>
   );
