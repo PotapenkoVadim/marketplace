@@ -43,4 +43,7 @@ export const configuration = {
       path: '#',
     },
   ],
+  header: {
+    hidingClass: 'header_hide'
+  }
 };

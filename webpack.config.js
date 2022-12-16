@@ -37,7 +37,8 @@ module.exports = (env, argv) => {
         '@components': path.resolve(__dirname, 'src/components/'),
         '@pages': path.resolve(__dirname, 'src/pages'),
         '@uikit': path.resolve(__dirname, 'src/components/ui-kit'),
-        '@store': path.resolve(__dirname, 'src/store/')
+        '@store': path.resolve(__dirname, 'src/store/'),
+        '@hooks': path.resolve(__dirname, 'src/hooks')
       }
     },
     plugins: [

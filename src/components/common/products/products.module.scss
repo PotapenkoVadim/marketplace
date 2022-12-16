@@ -10,4 +10,5 @@
     &__actions { @include flex-space-between; }
   }
 
+  @media (max-width: $tablet) { grid-template-columns: 1fr; }
 }
