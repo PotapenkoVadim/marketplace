@@ -17,7 +17,7 @@ export const LayoutFooter = () => {
         </div>
 
         <div className={styles['layout__col']}>
-          <div className={styles['layout_left-100']}>
+          <div className={styles['layout_left']}>
             <h3 className={styles['layout__footer-title']}>Helpful Links</h3>
             <Navigation
               className={styles['layout__footer-navigation']}
