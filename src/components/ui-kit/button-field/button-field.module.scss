@@ -4,7 +4,11 @@
 .button-field { @include flex-align-center; background-color: $white; border-radius: 100px; width: 100%; padding: 10px;
   position: relative;
   &__field { flex: 3; border: none; outline: none; margin-left: 15px; }
-  &__button { flex: 1; padding: 20px 30px; background-color: $accent; color: $white; border: none; outline: none; border-radius: 100px; }
+  &__button { flex: 1; padding: 20px 30px; background-color: $accent; color: $white; border: none; outline: none;
+    border-radius: 100px; cursor: pointer;
+    &:hover { background-color: rgba($accent, 0.85); }
+    &:active { background-color: rgba($accent, 0.5); }
+  }
   &__placeholder { position: absolute; top: 50%; left: 5%; color: $grey; transform: translateY(-50%); @include transition-common; }
 
   &__field:focus ~ &__placeholder { font-size: 0.6rem; top: 18px; color: $accent; }
