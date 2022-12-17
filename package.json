@@ -24,7 +24,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "preact": "^10.11.3",
-    "preact-router": "^4.1.0"
+    "preact-router": "^4.1.0",
+    "zustand": "^4.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",

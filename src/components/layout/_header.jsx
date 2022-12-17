@@ -1,5 +1,5 @@
 import styles from './layout.module.scss';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Container } from '@components/common/container';
 import { Logo } from '@uikit/logo';
 import { Navigation } from '@components/common/navigation';
@@ -7,6 +7,7 @@ import { IconRounded } from '@uikit/icon/_rounded';
 import { Avatar } from '@uikit/avatar';
 import { configuration } from '@/configuration';
 import { useHeaderHiding } from '@hooks';
+import { useUserStore } from '@/store';
 
 import img from '../../static/avatar.png';
 
@@ -15,6 +16,11 @@ const routes = configuration.routes;
 export const LayoutHeader = () => {
   const refHeader = useRef(null);
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+
+  const user = useUserStore((state) => state.user);
+  useEffect(() => {
+    console.log(user);
+  }, [])
 
   useHeaderHiding(refHeader);
 
