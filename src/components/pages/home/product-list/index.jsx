@@ -3,9 +3,9 @@ import { Container } from '@components/common/container';
 import { TitleInvitation } from '@components/common/title-invitation';
 import { Products } from '@components/common/products';
 
-export const HomePageProductList = ({ title }) => {
+export const HomePageProductList = ({ title, id }) => {
   return (
-    <div className={styles['product-list']}>
+    <div id={id} className={styles['product-list']}>
       <div className={styles['product-list__header']}>
         <Container>
           <TitleInvitation title={title} textLink='Explore' link='#' />

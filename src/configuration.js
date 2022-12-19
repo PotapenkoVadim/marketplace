@@ -1,6 +1,7 @@
 import customerAvatarImage from './static/avatar.png';
 import defaultAvatarImage from './static/default-avatar.jpg';
 import adminAvatarImage from './static/admin-avatar.jpg';
+import homePagePoster from './static/introduce.png';
 
 const homePage = DEVELOPMENT ? '/' : '/marketplace/';
 const paths = {
@@ -60,6 +61,13 @@ export const configuration = {
   ],
   header: {
     hidingClass: 'header_hide',
+  },
+  homePage: {
+    poster: homePagePoster,
+    sectionIDs: {
+      topDeals: 'topDeals',
+      bestSelling: 'bestSelling',
+    },
   },
   user: {
     types: {
