@@ -2,12 +2,14 @@ import styles from './drop-down.module.scss';
 import { useState, useEffect, useRef } from 'react';
 import { DropDownLink } from './_link';
 
-export const DropDown = ({ children, menu }) => {
+export const DropDown = ({ children, menu, isForciblyHide }) => {
   const dropDownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropDown = () => {
-    setIsOpen(!isOpen);
+    if (!isForciblyHide) {
+      setIsOpen(!isOpen);
+    }
   };
 
   const closeDropDown = (event) => {
@@ -15,7 +17,9 @@ export const DropDown = ({ children, menu }) => {
     const isDropDownNode = dropDownRef.current === event.target;
 
     if (!isDropDownNode && !isDropDownChildNode) {
-      setIsOpen(false);
+      if (!isForciblyHide) {
+        setIsOpen(false);
+      }
     }
   };
 
@@ -24,6 +28,12 @@ export const DropDown = ({ children, menu }) => {
 
     return () => document.body.removeEventListener('click', closeDropDown);
   }, []);
+
+  useEffect(() => {
+    if (isForciblyHide) {
+      setIsOpen(false);
+    }
+  }, [isForciblyHide]);
 
   return (
     <div ref={dropDownRef} className={styles['dropdown']}>

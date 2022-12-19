@@ -19,7 +19,7 @@ export const LayoutHeader = () => {
   const user = useUserStore((state) => state.user);
 
   const isCustomer = useIsCustomer(user);
-  useHeaderHiding(refHeader);
+  const isHeaderHide = useHeaderHiding(refHeader);
 
   function handleClickMobileMenu() {
     setIsOpenMobileMenu(!isOpenMobileMenu);
@@ -48,7 +48,7 @@ export const LayoutHeader = () => {
               size='large' />
           )}
 
-          <LayoutHeaderAvatar />
+          <LayoutHeaderAvatar isHideMenu={isHeaderHide} />
 
           <IconRounded
             onClick={handleClickMobileMenu}

@@ -8,7 +8,7 @@ import { configuration } from '@/configuration';
 
 const userTypes = configuration.user.types;
 
-export const LayoutHeaderAvatar = () => {
+export const LayoutHeaderAvatar = ({ isHideMenu }) => {
   const [menu, setMenu] = useState([]);
 
   const { user, logIn, logOut } = useUserStore((state) => state);
@@ -51,7 +51,7 @@ export const LayoutHeaderAvatar = () => {
   }, [user, isAdmin]);
 
   return (
-    <DropDown menu={menu}>
+    <DropDown isForciblyHide={isHideMenu} menu={menu}>
       <Avatar
         className={styles['layout__avatar']}
         link={user.avatar} />
