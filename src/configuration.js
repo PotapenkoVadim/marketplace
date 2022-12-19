@@ -64,15 +64,15 @@ export const configuration = {
   user: {
     types: {
       admin: {
-        key: 'admin',
+        role: 'admin',
         avatar: adminAvatarImage,
       },
       customer: {
-        key: 'customer',
+        role: 'customer',
         avatar: customerAvatarImage,
       },
       guest: {
-        key: 'guest',
+        role: 'guest',
         avatar: defaultAvatarImage,
       },
     },

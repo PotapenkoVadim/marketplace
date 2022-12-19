@@ -20,18 +20,18 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
   const handeClick = isAdmin ? logInAsCustomer : logInAsAdmin;
 
   useEffect(() => {
-    if (user.key !== userTypes.guest.key) {
+    if (user.role !== userTypes.guest.role) {
       const userType = isAdmin
         ? userTypes.customer
         : userTypes.admin;
 
       setMenu([
         {
-          key: userType.key,
-          node: <span onClick={handeClick}>Switch to {userType.key}</span>
+          key: userType.role,
+          node: <span onClick={handeClick}>Switch to {userType.role}</span>
         },
         {
-          key: userTypes.guest.key,
+          key: userTypes.guest.role,
           node: <span onClick={logOut}>Log out</span>
         }
       ]);
@@ -39,11 +39,11 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
     } else {
       setMenu([
         {
-          key: userTypes.admin.key,
+          key: userTypes.admin.role,
           node: <span onClick={logInAsAdmin}>Log in as admin</span>
         },
         {
-          key: userTypes.customer.key,
+          key: userTypes.customer.role,
           node: <span onClick={logInAsCustomer}>Log in as customer</span>
         }
       ]);

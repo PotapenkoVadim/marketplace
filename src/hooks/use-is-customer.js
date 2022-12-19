@@ -6,7 +6,7 @@ const userTypes = configuration.user.types;
 export function useIsCustomer(user) {
   const [isCustomer, setIsCustomer] = useState(false);
 
-  useEffect(() => setIsCustomer(user.key === userTypes.customer.key), [user]);
+  useEffect(() => setIsCustomer(user.role === userTypes.customer.role), [user]);
 
   return isCustomer;
 }
