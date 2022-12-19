@@ -14,7 +14,7 @@ export const App = () => {
   return (
     <Layout>
       <Router>
-        <HomePage path={paths.home} />
+        <HomePage default path={paths.home} />
         <AboutPage path={paths.about} />
         <BlogPage path={paths.blog} />
         <PricingPage path={paths.pricing} />
