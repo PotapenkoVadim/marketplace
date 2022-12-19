@@ -21,9 +21,15 @@ export const LayoutHeader = () => {
   const isCustomer = useIsCustomer(user);
   const isHeaderHide = useHeaderHiding(refHeader);
 
-  function handleClickMobileMenu() {
+  const handleClickMobileMenu = () => {
     setIsOpenMobileMenu(!isOpenMobileMenu);
-  }
+  };
+
+  const closeMobileMenu = () => {
+    if (isOpenMobileMenu) {
+      setIsOpenMobileMenu(false);
+    }
+  };
 
   return (
     <header ref={refHeader} className={styles['layout__header']}>
@@ -33,6 +39,7 @@ export const LayoutHeader = () => {
         </div>
 
         <Navigation
+          handleClick={closeMobileMenu}
           routes={routes}
           className={`
             ${styles['layout__header-navigation']}
