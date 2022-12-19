@@ -65,16 +65,16 @@ export const configuration = {
     types: {
       admin: {
         key: 'admin',
-        avatar: adminAvatarImage
+        avatar: adminAvatarImage,
       },
       customer: {
         key: 'customer',
-        avatar: customerAvatarImage
+        avatar: customerAvatarImage,
       },
       guest: {
         key: 'guest',
-        avatar: defaultAvatarImage
-      }
-    }
-  }
+        avatar: defaultAvatarImage,
+      },
+    },
+  },
 };
