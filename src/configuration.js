@@ -1,3 +1,7 @@
+import customerAvatarImage from './static/avatar.png';
+import defaultAvatarImage from './static/default-avatar.jpg';
+import adminAvatarImage from './static/admin-avatar.jpg';
+
 const homePage = DEVELOPMENT ? '/' : '/marketplace/';
 const paths = {
   home: homePage,
@@ -57,4 +61,20 @@ export const configuration = {
   header: {
     hidingClass: 'header_hide',
   },
+  user: {
+    types: {
+      admin: {
+        key: 'admin',
+        avatar: adminAvatarImage
+      },
+      customer: {
+        key: 'customer',
+        avatar: customerAvatarImage
+      },
+      guest: {
+        key: 'guest',
+        avatar: defaultAvatarImage
+      }
+    }
+  }
 };

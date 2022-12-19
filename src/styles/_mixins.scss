@@ -17,3 +17,11 @@
   @include flex-align-center;
   justify-content: space-between;
 }
+
+@mixin linklike {
+  color: $black;
+  text-decoration: none;
+  @include transition-common;
+  &:hover { color: $accent; }
+  &_active { color: $accent; text-decoration: none !important; }
+}

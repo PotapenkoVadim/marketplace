@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { configuration } from '../configuration';
+import { configuration } from '@/configuration';
 
 export function useHeaderHiding(headerRef) {
   useEffect(() => {

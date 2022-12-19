@@ -1,5 +1,5 @@
 import styles from './navigation.module.scss';
-import { NavigationLink } from './_link';
+import { Link } from '@uikit/link';
 
 export const Navigation = ({ className, routes, direction='row' }) => {
   return (
@@ -9,7 +9,7 @@ export const Navigation = ({ className, routes, direction='row' }) => {
       ${className ?? ''}
     `}>
       {routes.length > 0 && (
-        routes.map(({name, path}) => <NavigationLink key={name} to={path}>{name}</NavigationLink>)
+        routes.map(({name, path}) => <Link key={name} to={path}>{name}</Link>)
       )}
     </nav>
   );

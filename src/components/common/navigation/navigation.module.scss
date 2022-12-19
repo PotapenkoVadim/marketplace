@@ -2,11 +2,6 @@
 @import '../../../styles/mixins';
 
 .navigation { @include flex-space-between;
-  &__link { color: $black; text-decoration: none; @include transition-common;
-    &:hover { color: $accent; }
-    &_active { color: $accent; text-decoration: none !important; }
-  }
-
   &_row { flex-direction: row; }
   &_col { flex-direction: column; }
 }

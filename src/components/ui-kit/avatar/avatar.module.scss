@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-.avatar {
+.avatar { max-width: 54px; max-height: 54px; border-radius: 50%;
   @media (max-width: $mobile) { width: 35px; height: 35px; }
 }
