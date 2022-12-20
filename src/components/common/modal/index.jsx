@@ -12,7 +12,11 @@ export const Modal = ({ children, shouldOpen, title }) => {
   };
 
   return (
-    <div className={`${styles['modal__wrapper']} ${isOpen && styles['modal__wrapper_open']}`}>
+    <div
+      className={`${styles['modal__wrapper']} ${
+        isOpen && styles['modal__wrapper_open']
+      }`}
+    >
       <div className={styles['modal__container']}>
         <div className={styles['modal__header']}>
           <h3 className={styles['modal__title']}>{title}</h3>
@@ -23,12 +27,11 @@ export const Modal = ({ children, shouldOpen, title }) => {
             color="white"
             size="mini"
             background="accent"
-            className={styles['modal__close']} />
+            className={styles['modal__close']}
+          />
         </div>
 
-        <div className={styles['modal__content']}>
-          {children}
-        </div>
+        <div className={styles['modal__content']}>{children}</div>
       </div>
     </div>
   );
