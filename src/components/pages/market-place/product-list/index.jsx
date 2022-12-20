@@ -4,7 +4,6 @@ import { Products } from '@components/common/products';
 import { IconRounded } from '@uikit/icon/_rounded';
 import { useIsAdmin } from '@hooks';
 import { useUserStore, useModalStore, useProductStore } from '@/store';
-import { ProductModal } from '@components/common/product-modal';
 import { configuration } from '@/configuration';
 import { generateID } from '@/utils';
 
@@ -21,7 +20,10 @@ export const MarketPlacePageProductList = () => {
   const isAdmin = useIsAdmin(user);
 
   const openProductModal = () => {
-    openModal(productModalType);
+    openModal(productModalType, {
+      action: createNewProduct,
+      product: defaultProduct,
+    });
   };
 
   const createNewProduct = (data) => {
@@ -54,8 +56,6 @@ export const MarketPlacePageProductList = () => {
 
         <Products products={products} />
       </Container>
-
-      <ProductModal handleSubmit={createNewProduct} product={defaultProduct} />
     </div>
   );
 };

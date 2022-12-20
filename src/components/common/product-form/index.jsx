@@ -1,9 +1,9 @@
 import styles from './product-form.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FormField } from '@uikit/form';
 import { Button } from '@uikit/button';
 
-export const ProductForm = ({ onSubmit, productForm }) => {
+export const ProductForm = ({ onSubmit, productForm, buttonText }) => {
   const [product, setProduct] = useState(productForm);
 
   const handleSubmit = (event) => {
@@ -23,6 +23,8 @@ export const ProductForm = ({ onSubmit, productForm }) => {
     });
   };
 
+  useEffect(() => setProduct(productForm), [productForm]);
+
   return (
     <form className={styles['product-form']}>
       <FormField
@@ -40,7 +42,7 @@ export const ProductForm = ({ onSubmit, productForm }) => {
         onChange={handleChange}
       />
 
-      <Button onClick={handleSubmit}>Add</Button>
+      <Button onClick={handleSubmit}>{buttonText}</Button>
     </form>
   );
 };

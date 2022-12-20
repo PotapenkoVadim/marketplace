@@ -3,7 +3,7 @@ import { IconRounded } from '@uikit/icon/_rounded';
 import { useModalStore } from '@/store';
 
 export const Modal = ({ type, children, title }) => {
-  const [isOpen, close] = useModalStore((state) => [state[type], state.close]);
+  const [modal, close] = useModalStore((state) => [state[type], state.close]);
 
   const closeModal = () => {
     close(type);
@@ -12,7 +12,7 @@ export const Modal = ({ type, children, title }) => {
   return (
     <div
       className={`${styles['modal__wrapper']} ${
-        isOpen && styles['modal__wrapper_open']
+        modal.isOpen && styles['modal__wrapper_open']
       }`}
     >
       <div className={styles['modal__container']}>

@@ -12,6 +12,7 @@
   &__menu { -webkit-mask-image: url(../../../static/menu.svg); }
   &__close { -webkit-mask-image: url(../../../static/close.svg); }
   &__add { -webkit-mask-image: url(../../../static/add.svg); }
+  &__edit { -webkit-mask-image: url(../../../static/edit.svg); }
 
   &_white { background-color: $white; }
   &_black { background-color: $black; }

@@ -1,6 +1,7 @@
 import { HomePageIntroduce } from '@components/pages/home/introduce';
 import { HomePageProductList } from '@components/pages/home/product-list';
 import { HomePageSubscribe } from '@components/pages/home/subscribe';
+import { ProductModal } from '@components/common/product-modal';
 import { configuration } from '@/configuration';
 
 const { topDeals: topDealsSectionID, bestSelling: bestSellingSectionID } =
@@ -16,6 +17,8 @@ export const HomePage = () => {
         title="Best Selling Product"
       />
       <HomePageSubscribe />
+
+      <ProductModal />
     </>
   );
 };
