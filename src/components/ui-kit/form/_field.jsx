@@ -10,6 +10,7 @@ export const FormField = ({ value, label, name, onChange, type = 'text' }) => {
     <div className={styles['form__control']}>
       <input
         className={styles['form__field']}
+        value={value}
         type={type}
         name={name}
         onChange={onChange}

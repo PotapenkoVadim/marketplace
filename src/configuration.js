@@ -2,6 +2,7 @@ import customerAvatarImage from './static/avatar.png';
 import defaultAvatarImage from './static/default-avatar.jpg';
 import adminAvatarImage from './static/admin-avatar.jpg';
 import homePagePoster from './static/introduce.png';
+import productDefaultImage from './static/test-product.png';
 
 const homePage = DEVELOPMENT ? '/' : '/marketplace/';
 const paths = {
@@ -88,6 +89,13 @@ export const configuration = {
   modal: {
     types: {
       productModal: 'productModal',
+    },
+  },
+  product: {
+    defaultImage: productDefaultImage,
+    default: {
+      name: '',
+      price: '',
     },
   },
 };

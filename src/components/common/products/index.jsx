@@ -1,12 +1,13 @@
 import styles from './products.module.scss';
 import { ProductsItem } from './_item';
 
-export const Products = () => {
+export const Products = ({ products = [] }) => {
   return (
     <div className={styles['products']}>
-      <ProductsItem />
-      <ProductsItem />
-      <ProductsItem />
+      {products.length > 0 &&
+        products.map((product) => (
+          <ProductsItem key={product.id} product={product} />
+        ))}
     </div>
   );
 };

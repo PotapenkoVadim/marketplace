@@ -3,17 +3,20 @@ import { Container } from '@components/common/container';
 import { Products } from '@components/common/products';
 import { IconRounded } from '@uikit/icon/_rounded';
 import { useIsAdmin } from '@hooks';
-import { useUserStore, useModalStore } from '@/store';
+import { useUserStore, useModalStore, useProductStore } from '@/store';
 import { ProductModal } from '@components/common/product-modal';
 import { configuration } from '@/configuration';
+import { generateID } from '@/utils';
 
 const productModalType = configuration.modal.types.productModal;
+const defaultProduct = configuration.product.default;
 
 export const MarketPlacePageProductList = () => {
+  const user = useUserStore((state) => state.user);
+  const { products, add: addNewProduct } = useProductStore((state) => state);
   const { open: openModal, close: closeModal } = useModalStore(
     (state) => state
   );
-  const user = useUserStore((state) => state.user);
 
   const isAdmin = useIsAdmin(user);
 
@@ -21,9 +24,13 @@ export const MarketPlacePageProductList = () => {
     openModal(productModalType);
   };
 
-  const createNewProduct = (newProduct) => {
-    console.log(newProduct);
+  const createNewProduct = (data) => {
+    const newProduct = {
+      id: generateID(),
+      ...data,
+    };
 
+    addNewProduct(newProduct);
     closeModal(productModalType);
   };
 
@@ -45,10 +52,10 @@ export const MarketPlacePageProductList = () => {
           )}
         </div>
 
-        <Products />
+        <Products products={products} />
       </Container>
 
-      <ProductModal handleSubmit={createNewProduct} />
+      <ProductModal handleSubmit={createNewProduct} product={defaultProduct} />
     </div>
   );
 };

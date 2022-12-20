@@ -3,16 +3,14 @@ import { useState } from 'react';
 import { FormField } from '@uikit/form';
 import { Button } from '@uikit/button';
 
-export const ProductForm = ({ onSubmit }) => {
-  const [product, setProduct] = useState({
-    name: '',
-    price: null,
-  });
+export const ProductForm = ({ onSubmit, productForm }) => {
+  const [product, setProduct] = useState(productForm);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     onSubmit(product);
+    setProduct(productForm);
   };
 
   const handleChange = (event) => {

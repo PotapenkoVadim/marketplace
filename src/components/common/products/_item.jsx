@@ -4,10 +4,11 @@ import { IconRounded } from '@uikit/icon/_rounded';
 import { Poster } from '@uikit/poster';
 import { ButtonLink } from '@uikit/button/_link';
 import { Button } from '@uikit/button';
+import { configuration } from '@/configuration';
 
-import productImg from '../../../static/test-product.png';
+const productDefaultImage = configuration.product.defaultImage;
 
-export const ProductsItem = () => {
+export const ProductsItem = ({ product }) => {
   return (
     <div className={styles['products__item']}>
       <div className={styles['products__item__header']}>
@@ -22,17 +23,15 @@ export const ProductsItem = () => {
 
       <Poster
         className={styles['products__item__poster']}
-        source={productImg}
+        source={productDefaultImage}
       />
 
       <div className={styles['products__item__price']}>
         <Badge>Audio Devices</Badge>
-        <span>₦600,000</span>
+        <span>₦{product.price}</span>
       </div>
 
-      <div className={styles['products__item__title']}>
-        Nokia Essential Wireless Headphones 120CM BLACK
-      </div>
+      <div className={styles['products__item__title']}>{product.name}</div>
 
       <div className={styles['products__item__actions']}>
         <ButtonLink>Add to Cart</ButtonLink>
