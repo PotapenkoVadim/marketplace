@@ -7,7 +7,8 @@ export const Link = ({ children, to, onClick }) => {
       onClick={onClick}
       className={styles['link']}
       activeClassName={styles['link_active']}
-      href={to} >
+      href={to}
+    >
       {children}
     </RouterLink>
   );

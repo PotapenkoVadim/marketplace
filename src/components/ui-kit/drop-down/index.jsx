@@ -11,18 +11,15 @@ export const DropDown = ({ children, menu, isForciblyHide }) => {
     }
   };
 
-  const closeDropDown = (event) => {
-    const isDropDownChildNode = dropDownRef.current.contains(event.target);
-    const isDropDownNode = dropDownRef.current === event.target;
-
-    if (!isDropDownNode && !isDropDownChildNode) {
-      if (!isForciblyHide) {
+  useEffect(() => {
+    const closeDropDown = (event) => {
+      const isDropDownChildNode = dropDownRef.current.contains(event.target);
+      const isDropDownNode = dropDownRef.current === event.target;
+      if (!isDropDownNode && !isDropDownChildNode) {
         setIsOpen(false);
       }
-    }
-  };
+    };
 
-  useEffect(() => {
     document.body.addEventListener('click', closeDropDown);
 
     return () => document.body.removeEventListener('click', closeDropDown);
@@ -40,11 +37,13 @@ export const DropDown = ({ children, menu, isForciblyHide }) => {
         {children}
       </div>
 
-      <div className={`${styles['dropdown__content']} ${!isOpen && 'visually-hidden'}`}>
-        {menu.map(item => (
-          <Fragment key={item.key}>
-            {item.node}
-          </Fragment>
+      <div
+        className={`${styles['dropdown__content']} ${
+          !isOpen && 'visually-hidden'
+        }`}
+      >
+        {menu.map((item) => (
+          <Fragment key={item.key}>{item.node}</Fragment>
         ))}
       </div>
     </div>

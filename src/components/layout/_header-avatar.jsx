@@ -15,62 +15,69 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
 
   const isAdmin = useIsAdmin(user);
 
-  const logInAsAdmin = () => logIn(userTypes.admin);
-  const logInAsCustomer = () => logIn(userTypes.customer);
-  const handeClick = isAdmin ? logInAsCustomer : logInAsAdmin;
-
   useEffect(() => {
+    const logInAsAdmin = () => logIn(userTypes.admin);
+    const logInAsCustomer = () => logIn(userTypes.customer);
+
     if (user.role !== userTypes.guest.role) {
-      const userType = isAdmin
-        ? userTypes.customer
-        : userTypes.admin;
+      const userType = isAdmin ? userTypes.customer : userTypes.admin;
+      const handeClick = isAdmin ? logInAsCustomer : logInAsAdmin;
 
       setMenu([
         {
           key: userType.role,
           node: (
-            <span className={styles['layout__header__menu-link']} onClick={handeClick}>
+            <span
+              className={styles['layout__header__menu-link']}
+              onClick={handeClick}
+            >
               Switch to {userType.role}
             </span>
-          )
+          ),
         },
         {
           key: userTypes.guest.role,
           node: (
-            <span className={styles['layout__header__menu-link']} onClick={logOut}>
+            <span
+              className={styles['layout__header__menu-link']}
+              onClick={logOut}
+            >
               Log out
             </span>
-          )
-        }
+          ),
+        },
       ]);
-
     } else {
       setMenu([
         {
           key: userTypes.admin.role,
           node: (
-            <span className={styles['layout__header__menu-link']} onClick={logInAsAdmin}>
+            <span
+              className={styles['layout__header__menu-link']}
+              onClick={logInAsAdmin}
+            >
               Log in as admin
             </span>
-          )
+          ),
         },
         {
           key: userTypes.customer.role,
           node: (
-            <span className={styles['layout__header__menu-link']} onClick={logInAsCustomer}>
+            <span
+              className={styles['layout__header__menu-link']}
+              onClick={logInAsCustomer}
+            >
               Log in as customer
             </span>
-          )
-        }
+          ),
+        },
       ]);
     }
-  }, [user, isAdmin]);
+  }, [user, isAdmin, logIn, logOut]);
 
   return (
     <DropDown isForciblyHide={isHideMenu} menu={menu}>
-      <Avatar
-        className={styles['layout__avatar']}
-        link={user.avatar} />
+      <Avatar className={styles['layout__avatar']} link={user.avatar} />
     </DropDown>
   );
 };

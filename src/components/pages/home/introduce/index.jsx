@@ -19,21 +19,26 @@ export const HomePageIntroduce = () => {
     <div className={styles['introduce']}>
       <Container className={styles['introduce__info']}>
         <div className={styles['introduce__subtitle']}>WE’RE STILL</div>
-        <h1 className={styles['introduce__title']}>Filling up<br/>the spaces.</h1>
+        <h1 className={styles['introduce__title']}>
+          Filling up
+          <br />
+          the spaces.
+        </h1>
         <div className={styles['introduce__actions']}>
-          <Button onClick={goToMarketPlace} variant='primary'>
+          <Button onClick={goToMarketPlace} variant="primary">
             Explore Marketplace
           </Button>
 
-          <ButtonLink href={`#${topDealsSectionID}`} className={styles['introduce__link']}>
+          <ButtonLink
+            href={`#${topDealsSectionID}`}
+            className={styles['introduce__link']}
+          >
             See Top Deals
           </ButtonLink>
         </div>
       </Container>
 
-      <Poster
-        className={styles['introduce__poster']}
-        source={homePagePoster} />
+      <Poster className={styles['introduce__poster']} source={homePagePoster} />
     </div>
   );
 };

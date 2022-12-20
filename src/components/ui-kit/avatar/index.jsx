@@ -4,8 +4,9 @@ export const Avatar = ({ link, className }) => {
   return (
     <img
       className={`${styles['avatar']} ${className ?? ''}`}
-      loading='lazy'
+      loading="lazy"
       src={link}
-      alt='user avatar' />
+      alt="user avatar"
+    />
   );
 };

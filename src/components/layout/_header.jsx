@@ -44,15 +44,17 @@ export const LayoutHeader = () => {
           className={`
             ${styles['layout__header-navigation']}
             ${isOpenMobileMenu ? styles['layout__header-navigation_open'] : ''}
-          `} />
+          `}
+        />
 
         <div className={styles['layout__actions']}>
           {isCustomer && (
             <IconRounded
               className={styles['layout__header__bag']}
-              variant='bag'
-              color='white'
-              size='large' />
+              variant="bag"
+              color="white"
+              size="large"
+            />
           )}
 
           <LayoutHeaderAvatar isHideMenu={isHeaderHide} />
@@ -61,8 +63,9 @@ export const LayoutHeader = () => {
             onClick={handleClickMobileMenu}
             className={styles['layout__header__menu']}
             variant={isOpenMobileMenu ? 'close' : 'menu'}
-            color='white'
-            size='large' />
+            color="white"
+            size="large"
+          />
         </div>
       </Container>
     </header>

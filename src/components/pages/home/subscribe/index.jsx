@@ -6,15 +6,18 @@ export const HomePageSubscribe = () => {
   return (
     <Container>
       <div className={styles['subscribe']}>
-        <h2 className={styles['subscribe__title']}>Subscribe to Our Newsletter</h2>
+        <h2 className={styles['subscribe__title']}>
+          Subscribe to Our Newsletter
+        </h2>
         <div className={styles['subscribe__subtitle']}>
-          Don't miss out on our top deals! Dont worry we will not spam you.
+          Don&apos;t miss out on our top deals! Dont worry we will not spam you.
         </div>
 
         <ButtonField
-          placeholder='Enter your Email Here'
-          textButton='Subscribe'
-          className={styles['subscribe__button-field']} />
+          placeholder="Enter your Email Here"
+          textButton="Subscribe"
+          className={styles['subscribe__button-field']}
+        />
       </div>
     </Container>
   );

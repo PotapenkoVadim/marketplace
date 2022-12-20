@@ -7,16 +7,24 @@ export const ButtonLink = ({
   onClick,
   href,
   color = 'primary',
-  iconVariant = null
+  iconVariant = null,
 }) => {
   return (
     <a
       href={href}
       onClick={onClick}
-      className={`${styles['button-link']} ${styles[`button-link_${color}`]} ${className ?? ''}`}
+      className={`${styles['button-link']} ${styles[`button-link_${color}`]} ${
+        className ?? ''
+      }`}
     >
       <span>{children}</span>
-      {iconVariant && <Icon className={styles['button-link__icon']} variant={iconVariant} color={color} />}
+      {iconVariant && (
+        <Icon
+          className={styles['button-link__icon']}
+          variant={iconVariant}
+          color={color}
+        />
+      )}
     </a>
   );
 };

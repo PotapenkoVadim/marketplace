@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 .layout { 
-  &__header { padding: 35px 0; position: fixed; z-index: 5; top: 0; left: 0; width: 100%;
+  &__header { padding: 30px 0; position: fixed; z-index: 5; top: 0; left: 0; width: 100%;
     background-color: $white; @include transition-common;
     &-container { @include flex-space-between; }
     &-navigation { flex: 2; padding: 0 110px; @include transition-common; }

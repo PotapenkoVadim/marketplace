@@ -7,15 +7,18 @@ export const IconRounded = ({
   size,
   className,
   onClick,
-  background='accent'
+  background = 'accent',
 }) => {
   return (
-    <div onClick={onClick} className={`
+    <div
+      onClick={onClick}
+      className={`
       ${styles['rounded-icon']}
       ${styles[`rounded-icon_${size}`]}
       ${styles[`rounded-icon_${background}`]}
       ${className ?? ''}
-    `}>
+    `}
+    >
       <Icon variant={variant} color={color} />
     </div>
   );

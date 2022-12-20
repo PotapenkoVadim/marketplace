@@ -5,7 +5,7 @@ export const Button = ({
   className,
   onClick,
   variant = 'primary',
-  size = 'small'
+  size = 'small',
 }) => {
   return (
     <button

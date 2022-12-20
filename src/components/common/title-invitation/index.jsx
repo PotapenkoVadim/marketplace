@@ -5,7 +5,9 @@ export const TitleInvitation = ({ title, textLink, link }) => {
   return (
     <div className={styles['title-invitation']}>
       <span className={styles['title-invitation__title']}>{title}</span>
-      <ButtonLink color='black' iconVariant='arrow-link'>{textLink}</ButtonLink>
+      <ButtonLink href={link} color="black" iconVariant="arrow-link">
+        {textLink}
+      </ButtonLink>
     </div>
   );
 };

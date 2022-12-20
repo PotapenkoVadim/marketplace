@@ -11,11 +11,19 @@ export const ProductsItem = () => {
   return (
     <div className={styles['products__item']}>
       <div className={styles['products__item__header']}>
-        <Badge type='secondary'>-59%</Badge>
-        <IconRounded variant='heart' color='accent' size='small' background='light' />
+        <Badge type="secondary">-59%</Badge>
+        <IconRounded
+          variant="heart"
+          color="accent"
+          size="small"
+          background="light"
+        />
       </div>
 
-      <Poster className={styles['products__item__poster']} source={productImg} />
+      <Poster
+        className={styles['products__item__poster']}
+        source={productImg}
+      />
 
       <div className={styles['products__item__price']}>
         <Badge>Audio Devices</Badge>
@@ -28,7 +36,9 @@ export const ProductsItem = () => {
 
       <div className={styles['products__item__actions']}>
         <ButtonLink>Add to Cart</ButtonLink>
-        <Button size='large' variant='primary'>Buy Now</Button>
+        <Button size="large" variant="primary">
+          Buy Now
+        </Button>
       </div>
     </div>
   );

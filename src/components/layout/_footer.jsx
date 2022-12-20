@@ -13,7 +13,9 @@ export const LayoutFooter = () => {
       <Container className={styles['layout__footer-container']}>
         <div className={styles['layout__col']}>
           <h3 className={styles['layout__footer-title']}>Your company</h3>
-          <div>Our mission is to make gadjet purchase, accessible and affordable.</div>
+          <div>
+            Our mission is to make gadjet purchase, accessible and affordable.
+          </div>
         </div>
 
         <div className={styles['layout__col']}>
@@ -22,7 +24,8 @@ export const LayoutFooter = () => {
             <Navigation
               className={styles['layout__footer-navigation']}
               routes={firstRoutes}
-              direction='col' />
+              direction="col"
+            />
           </div>
         </div>
 
@@ -31,16 +34,37 @@ export const LayoutFooter = () => {
           <Navigation
             className={styles['layout__footer-navigation']}
             routes={secondRoutes}
-            direction='col' />
+            direction="col"
+          />
         </div>
 
         <div className={styles['layout__col']}>
           <h3 className={styles['layout__footer-title']}>Contact Us</h3>
           <div className={styles['layout__social']}>
-            <IconRounded variant='facebook' color='accent' size='small' background='light' />
-            <IconRounded variant='twitter' color='accent' size='small' background='light' />
-            <IconRounded variant='instagram' color='accent' size='small' background='light' />
-            <IconRounded variant='linkedin' color='accent' size='small' background='light' />
+            <IconRounded
+              variant="facebook"
+              color="accent"
+              size="small"
+              background="light"
+            />
+            <IconRounded
+              variant="twitter"
+              color="accent"
+              size="small"
+              background="light"
+            />
+            <IconRounded
+              variant="instagram"
+              color="accent"
+              size="small"
+              background="light"
+            />
+            <IconRounded
+              variant="linkedin"
+              color="accent"
+              size="small"
+              background="light"
+            />
           </div>
           <div>hello@yourcompany.com</div>
         </div>

@@ -9,13 +9,20 @@ module.exports = {
 	'extends': [
 		'eslint:recommended',
 		'plugin:react/recommended',
-		'plugin:prettier/recommended'
+		'plugin:prettier/recommended',
+		'preact'
 	],
 	'overrides': [
+		{
+      'files': ['*.jsx', '*.js']
+    }
 	],
 	'parserOptions': {
 		'ecmaVersion': 'latest',
-		'sourceType': 'module'
+		'sourceType': 'module',
+		'ecmaFeatures': {
+      'jsx': true
+    }
 	},
 	'plugins': [
 		'react',
@@ -24,7 +31,8 @@ module.exports = {
 	'rules': {
 		'indent': [
 			'error',
-			2
+			2,
+			{ 'SwitchCase': 1 }
 		],
 		'linebreak-style': [
 			'error',
@@ -37,6 +45,7 @@ module.exports = {
 		'semi': [
 			'error',
 			'always'
-		]
+		],
+		"react/prop-types": 0
 	}
 };

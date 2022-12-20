@@ -6,8 +6,9 @@ export const Poster = ({ source, className, alt = 'poster' }) => {
       <img
         className={styles['poster__image']}
         src={source}
-        loading='lazy'
-        alt={alt} />
+        loading="lazy"
+        alt={alt}
+      />
     </div>
   );
 };

@@ -8,7 +8,7 @@ export const HomePageProductList = ({ title, id }) => {
     <div id={id} className={styles['product-list']}>
       <div className={styles['product-list__header']}>
         <Container>
-          <TitleInvitation title={title} textLink='Explore' link='#' />
+          <TitleInvitation title={title} textLink="Explore" link="#" />
         </Container>
       </div>
 
@@ -18,5 +18,5 @@ export const HomePageProductList = ({ title, id }) => {
         </div>
       </Container>
     </div>
-  )
+  );
 };
