@@ -10,6 +10,4 @@
       border-left: 9px solid transparent; border-right: 9px solid transparent; border-bottom: 9px solid $white;
     }
   }
-
-  &__link { display: block; margin: 10px 0; cursor: pointer; @include linklike; }
 }

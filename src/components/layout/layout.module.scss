@@ -7,6 +7,7 @@
     &-container { @include flex-space-between; }
     &-navigation { flex: 2; padding: 0 110px; @include transition-common; }
     &__menu { display: none !important; }
+    &__menu-link { display: block; margin: 10px 0; cursor: pointer; @include linklike; }
   }
 
   &__content { padding-top: $padding-header; }

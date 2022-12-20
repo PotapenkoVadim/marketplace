@@ -28,11 +28,19 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
       setMenu([
         {
           key: userType.role,
-          node: <span onClick={handeClick}>Switch to {userType.role}</span>
+          node: (
+            <span className={styles['layout__header__menu-link']} onClick={handeClick}>
+              Switch to {userType.role}
+            </span>
+          )
         },
         {
           key: userTypes.guest.role,
-          node: <span onClick={logOut}>Log out</span>
+          node: (
+            <span className={styles['layout__header__menu-link']} onClick={logOut}>
+              Log out
+            </span>
+          )
         }
       ]);
 
@@ -40,11 +48,19 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
       setMenu([
         {
           key: userTypes.admin.role,
-          node: <span onClick={logInAsAdmin}>Log in as admin</span>
+          node: (
+            <span className={styles['layout__header__menu-link']} onClick={logInAsAdmin}>
+              Log in as admin
+            </span>
+          )
         },
         {
           key: userTypes.customer.role,
-          node: <span onClick={logInAsCustomer}>Log in as customer</span>
+          node: (
+            <span className={styles['layout__header__menu-link']} onClick={logInAsCustomer}>
+              Log in as customer
+            </span>
+          )
         }
       ]);
     }
