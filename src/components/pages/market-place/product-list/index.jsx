@@ -5,15 +5,26 @@ import { IconRounded } from '@uikit/icon/_rounded';
 import { useIsAdmin } from '@hooks';
 import { useUserStore, useModalStore } from '@/store';
 import { ProductModal } from '@components/common/product-modal';
+import { configuration } from '@/configuration';
+
+const productModalType = configuration.modal.types.productModal;
 
 export const MarketPlacePageProductList = () => {
-  const openModal = useModalStore((state) => state.open);
+  const { open: openModal, close: closeModal } = useModalStore(
+    (state) => state
+  );
   const user = useUserStore((state) => state.user);
 
   const isAdmin = useIsAdmin(user);
 
   const openProductModal = () => {
-    openModal('productModal');
+    openModal(productModalType);
+  };
+
+  const createNewProduct = (newProduct) => {
+    console.log(newProduct);
+
+    closeModal(productModalType);
   };
 
   return (
@@ -37,7 +48,7 @@ export const MarketPlacePageProductList = () => {
         <Products />
       </Container>
 
-      <ProductModal />
+      <ProductModal handleSubmit={createNewProduct} />
     </div>
   );
 };

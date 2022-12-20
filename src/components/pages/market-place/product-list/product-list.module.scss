@@ -5,4 +5,8 @@
   &__header { display: flex; justify-content: space-between; align-items: flex-start; }
   &__title { margin-bottom: 50px; }
   &__add { cursor: pointer; }
+
+  @media (max-width: $tablet) {
+    &__header { margin-top: 60px; }
+  }
 }

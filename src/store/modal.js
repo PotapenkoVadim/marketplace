@@ -1,7 +1,10 @@
 import create from 'zustand';
+import { configuration } from '@/configuration';
+
+const productModalType = configuration.modal.types.productModal;
 
 export const useModalStore = create((set) => ({
-  productModal: false,
+  [productModalType]: false,
   open: (modalType) =>
     set((state) => ({
       ...state,
