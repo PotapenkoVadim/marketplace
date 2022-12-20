@@ -7,7 +7,7 @@ export const MarketPlacePageProductList = () => {
     <div className={styles['product-list']}>
       <Container>
         <h1 className={styles['product-list__title']}>Our Porducts</h1>
-        
+
         <Products />
       </Container>
     </div>

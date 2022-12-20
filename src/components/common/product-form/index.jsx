@@ -6,7 +6,7 @@ import { Button } from '@uikit/button';
 export const ProductForm = () => {
   const [product, setProduct] = useState({
     name: '',
-    price: null
+    price: null,
   });
 
   const handleSubmit = (event) => {
@@ -21,7 +21,7 @@ export const ProductForm = () => {
 
     setProduct({
       ...product,
-      [key]: value
+      [key]: value,
     });
   };
 
@@ -30,17 +30,19 @@ export const ProductForm = () => {
       <h3 className={styles['product-form__title']}>Add new product</h3>
 
       <FormField
-        label='Name'
-        name='name'
+        label="Name"
+        name="name"
         value={product.name}
-        onChange={handleChange} />
+        onChange={handleChange}
+      />
 
       <FormField
-        label='Price'
-        type='number'
-        name='price'
+        label="Price"
+        type="number"
+        name="price"
         value={product.price}
-        onChange={handleChange} />
+        onChange={handleChange}
+      />
 
       <Button onClick={handleSubmit}>Add</Button>
     </form>
