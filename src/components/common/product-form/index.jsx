@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { FormField } from '@uikit/form';
 import { Button } from '@uikit/button';
 
-export const ProductForm = () => {
+export const ProductForm = ({ onSubmit }) => {
   const [product, setProduct] = useState({
     name: '',
     price: null,
@@ -12,7 +12,7 @@ export const ProductForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(product);
+    onSubmit(product);
   };
 
   const handleChange = (event) => {
@@ -26,9 +26,7 @@ export const ProductForm = () => {
   };
 
   return (
-    <form className={styles['product-form']} style={{ width: '40%' }}>
-      <h3 className={styles['product-form__title']}>Add new product</h3>
-
+    <form className={styles['product-form']}>
       <FormField
         label="Name"
         name="name"

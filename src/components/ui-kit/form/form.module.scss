@@ -2,7 +2,7 @@
 @import '../../../styles/mixins';
 
 .form {
-  &__control { display: block; width: 100%; position: relative; padding: 0; border-radius: 4px; border: 1px solid $accent;
+  &__control { display: block; width: 100%; position: relative; padding: 0; border-radius: 4px; border: 1px solid $light;
     background-color: $white; margin-bottom: 20px;
   }
 

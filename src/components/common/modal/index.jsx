@@ -1,14 +1,12 @@
 import styles from './modal.module.scss';
-import { useState, useEffect } from 'react';
 import { IconRounded } from '@uikit/icon/_rounded';
+import { useModalStore } from '@/store';
 
-export const Modal = ({ children, shouldOpen, title }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => setIsOpen(shouldOpen), [shouldOpen]);
+export const Modal = ({ type, children, title }) => {
+  const [isOpen, close] = useModalStore((state) => [state[type], state.close]);
 
   const closeModal = () => {
-    setIsOpen(false);
+    close(type);
   };
 
   return (

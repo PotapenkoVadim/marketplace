@@ -11,6 +11,7 @@
   &__heart { -webkit-mask-image: url(../../../static/heart.svg); }
   &__menu { -webkit-mask-image: url(../../../static/menu.svg); }
   &__close { -webkit-mask-image: url(../../../static/close.svg); }
+  &__add { -webkit-mask-image: url(../../../static/add.svg); }
 
   &_white { background-color: $white; }
   &_black { background-color: $black; }
