@@ -1,0 +1,6 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.product-form {
+  &__title { margin-bottom: 25px; }
+}

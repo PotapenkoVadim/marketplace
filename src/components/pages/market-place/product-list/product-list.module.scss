@@ -1,0 +1,6 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+.product-list {
+  &__title { margin-bottom: 50px; }
+}

@@ -1,9 +1,9 @@
-import { Container } from '@components/common/container';
+import { MarketPlacePageProductList } from '@components/pages/market-place/product-list';
 
 export const MarketPlacePage = () => {
   return (
-    <Container>
-      <h1 style={{ marginTop: '100px' }}>Marketplace Page</h1>
-    </Container>
+    <>
+      <MarketPlacePageProductList />
+    </>
   );
 };
