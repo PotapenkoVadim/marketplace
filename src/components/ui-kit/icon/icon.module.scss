@@ -18,6 +18,7 @@
 }
 
 .rounded-icon { display: inline-block; border-radius: 50%;
+  &_mini { padding: 5px; }
   &_small { padding: 12px; }
   &_large { padding: 17px; }
 
