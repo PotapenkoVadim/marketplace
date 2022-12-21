@@ -1,13 +1,16 @@
 import styles from './product.module.scss';
 import { Badge } from '@uikit/badge';
 import { Poster } from '@uikit/poster';
-import { ButtonLink } from '@uikit/button/_link';
-import { Button } from '@uikit/button';
 import { configuration } from '@/configuration';
-import { useUserStore, useModalStore, useProductStore } from '@/store';
-import { useIsAdmin } from '@hooks';
-import { ProductsAdminAction } from './_admin-action';
-import { ProductsCustomerAction } from './_customer-action';
+import {
+  useUserStore,
+  useModalStore,
+  useProductStore,
+  useCartStore,
+} from '@/store';
+import { ProductsAdminIcons } from './_admin-icons';
+import { ProductsCustomerIcons } from './_customer-icons';
+import { ProductCustomerActions } from './_customer-actions';
 
 const productDefaultImage = configuration.product.defaultImage;
 const { productModal: productModalType, dialogModal } =
@@ -15,14 +18,13 @@ const { productModal: productModalType, dialogModal } =
 
 export const Product = ({ product, className }) => {
   const user = useUserStore((state) => state.user);
+  const addToCart = useCartStore((state) => state.add);
   const { update: updateProduct, delete: deleteProduct } = useProductStore(
     (state) => state
   );
   const { open: openModal, close: closeModal } = useModalStore(
     (state) => state
   );
-
-  const isAdmin = useIsAdmin(user);
 
   const openProductModal = () => {
     openModal(productModalType, {
@@ -50,19 +52,31 @@ export const Product = ({ product, className }) => {
 
   const handleCustomerClick = () => {};
 
+  const openAddToCartModal = () => {
+    openModal(dialogModal, {
+      title: 'Do you want to add product to cart?',
+      action: addProductToCart,
+      buttonText: 'Correct',
+    });
+  };
+
+  const addProductToCart = () => {
+    addToCart(product.id, 1);
+    closeModal(dialogModal);
+  };
+
   return (
     <div className={`${styles['product']} ${className ?? ''}`}>
       <div className={styles['product__header']}>
         <Badge type="secondary">-59%</Badge>
 
-        {isAdmin ? (
-          <ProductsAdminAction
-            onDeleteClick={openDeleteProductModal}
-            onEditClick={openProductModal}
-          />
-        ) : (
-          <ProductsCustomerAction onLikeClick={handleCustomerClick} />
-        )}
+        <ProductsAdminIcons
+          user={user}
+          onDeleteClick={openDeleteProductModal}
+          onEditClick={openProductModal}
+        />
+
+        <ProductsCustomerIcons user={user} onLikeClick={handleCustomerClick} />
       </div>
 
       <Poster
@@ -76,13 +90,7 @@ export const Product = ({ product, className }) => {
       </div>
 
       <div className={styles['product__title']}>{product.name}</div>
-
-      <div className={styles['product__actions']}>
-        <ButtonLink>Add to Cart</ButtonLink>
-        <Button size="large" variant="primary">
-          Buy Now
-        </Button>
-      </div>
+      <ProductCustomerActions onAddToCart={openAddToCartModal} user={user} />
     </div>
   );
 };

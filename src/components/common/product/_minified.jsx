@@ -4,7 +4,7 @@ import { configuration } from '@/configuration';
 
 const productDefaultImage = configuration.product.defaultImage;
 
-export const ProductMinified = () => {
+export const ProductMinified = ({ product, count }) => {
   return (
     <div className={styles['product-minified']}>
       <div className={styles['product-minified__poster']}>
@@ -12,13 +12,13 @@ export const ProductMinified = () => {
       </div>
 
       <div className={styles['product-minified__info']}>
-        <div className={styles['product-minified__title']}>
-          Nokia Magic Plus 500+
-        </div>
+        <div className={styles['product-minified__title']}>{product.name}</div>
 
         <div className={styles['product-minified__price-container']}>
-          <div className={styles['product-minified__count']}>1</div>
-          <div className={styles['product-minified__price']}>₦600000</div>
+          <div className={styles['product-minified__count']}>{count}</div>
+          <div className={styles['product-minified__price']}>
+            ₦{product.price}
+          </div>
         </div>
       </div>
     </div>

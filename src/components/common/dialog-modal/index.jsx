@@ -20,7 +20,9 @@ export const DialogModal = () => {
     <Modal type={modalType} title={modal.data?.title}>
       {modal.data && (
         <div className={styles['dialog-modal']}>
-          <Button onClick={modal.data.action}>Accept</Button>
+          <Button onClick={modal.data.action}>
+            {modal.data?.buttonText ?? 'Accept'}
+          </Button>
 
           <Button variant="secondary" onClick={closeDialogModal}>
             Cancel
