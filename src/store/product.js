@@ -1,7 +1,10 @@
 import create from 'zustand';
+import { configuration } from '@/configuration';
+
+const productList = configuration.defaultProductList;
 
 export const useProductStore = create((set) => ({
-  products: [],
+  products: productList,
   add: (newProduct) =>
     set((state) => ({
       ...state,

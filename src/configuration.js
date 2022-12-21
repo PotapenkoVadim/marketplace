@@ -98,4 +98,21 @@ export const configuration = {
       price: '',
     },
   },
+  defaultProductList: [
+    {
+      id: 1,
+      name: 'Nokia Essential Wireless Headphones 120CM BLACK',
+      price: 600000,
+    },
+    {
+      id: 2,
+      name: 'Nokia Essential Wireless Headphones 120CM BLACK',
+      price: 600000,
+    },
+    {
+      id: 3,
+      name: 'Nokia Essential Wireless Headphones 120CM BLACK',
+      price: 600000,
+    },
+  ],
 };
