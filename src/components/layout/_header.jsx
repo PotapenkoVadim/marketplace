@@ -8,6 +8,7 @@ import { configuration } from '@/configuration';
 import { useHeaderHiding, useIsCustomer } from '@hooks';
 import { LayoutHeaderAvatar } from './_header-avatar';
 import { useUserStore } from '@/store';
+import { LayoutHeaderCart } from './_header-cart';
 
 const routes = configuration.routes;
 
@@ -48,14 +49,7 @@ export const LayoutHeader = () => {
         />
 
         <div className={styles['layout__actions']}>
-          {isCustomer && (
-            <IconRounded
-              className={styles['layout__header__bag']}
-              variant="bag"
-              color="white"
-              size="large"
-            />
-          )}
+          {isCustomer && <LayoutHeaderCart isHideMenu={isHeaderHide} />}
 
           <LayoutHeaderAvatar isHideMenu={isHeaderHide} />
 

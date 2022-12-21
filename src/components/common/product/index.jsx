@@ -13,7 +13,7 @@ const productDefaultImage = configuration.product.defaultImage;
 const { productModal: productModalType, dialogModal } =
   configuration.modal.types;
 
-export const Product = ({ product }) => {
+export const Product = ({ product, className }) => {
   const user = useUserStore((state) => state.user);
   const { update: updateProduct, delete: deleteProduct } = useProductStore(
     (state) => state
@@ -51,7 +51,7 @@ export const Product = ({ product }) => {
   const handleCustomerClick = () => {};
 
   return (
-    <div className={styles['product']}>
+    <div className={`${styles['product']} ${className ?? ''}`}>
       <div className={styles['product__header']}>
         <Badge type="secondary">-59%</Badge>
 
