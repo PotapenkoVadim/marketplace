@@ -1,0 +1,6 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.dialog-modal { @include flex-space-between; margin: 15px 0; padding: 0 15px;
+  @media (max-width: $mobile) { flex-direction: column; gap: 15px; align-items: stretch; }
+}

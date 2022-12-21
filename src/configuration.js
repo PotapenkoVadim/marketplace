@@ -89,6 +89,7 @@ export const configuration = {
   modal: {
     types: {
       productModal: 'productModal',
+      dialogModal: 'dialogModal',
     },
   },
   product: {

@@ -13,10 +13,12 @@
   &__close { -webkit-mask-image: url(../../../static/close.svg); }
   &__add { -webkit-mask-image: url(../../../static/add.svg); }
   &__edit { -webkit-mask-image: url(../../../static/edit.svg); }
+  &__delete { -webkit-mask-image: url(../../../static/delete.svg); }
 
   &_white { background-color: $white; }
   &_black { background-color: $black; }
   &_accent { background-color: $accent; }
+  &_secondary { background-color: $secondary; }
 }
 
 .rounded-icon { display: inline-block; border-radius: 50%;
@@ -26,6 +28,7 @@
 
   &_accent { background-color: $accent; }
   &_light { background-color: $light; }
+  &_secondary { background-color: rgba($secondary, 0.3); }
 
   @media (max-width: $mobile) {
     &_large { padding: 8px; }

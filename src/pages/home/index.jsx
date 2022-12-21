@@ -3,6 +3,7 @@ import { HomePageProductList } from '@components/pages/home/product-list';
 import { HomePageSubscribe } from '@components/pages/home/subscribe';
 import { ProductModal } from '@components/common/product-modal';
 import { configuration } from '@/configuration';
+import { DialogModal } from '@components/common/dialog-modal';
 
 const { topDeals: topDealsSectionID, bestSelling: bestSellingSectionID } =
   configuration.homePage.sectionIDs;
@@ -19,6 +20,7 @@ export const HomePage = () => {
       <HomePageSubscribe />
 
       <ProductModal />
+      <DialogModal />
     </>
   );
 };

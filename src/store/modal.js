@@ -2,9 +2,14 @@ import create from 'zustand';
 import { configuration } from '@/configuration';
 
 const productModalType = configuration.modal.types.productModal;
+const dialogModalType = configuration.modal.types.dialogModal;
 
 export const useModalStore = create((set) => ({
   [productModalType]: {
+    isOpen: false,
+    data: null,
+  },
+  [dialogModalType]: {
     isOpen: false,
     data: null,
   },

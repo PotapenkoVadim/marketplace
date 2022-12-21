@@ -10,7 +10,7 @@ export const useProductStore = create((set) => ({
       ...state,
       products: [...state.products, newProduct],
     })),
-  remove: (productID) =>
+  delete: (productID) =>
     set((state) => ({
       ...state,
       products: state.products.filter((product) => product.id !== productID),

@@ -1,19 +1,23 @@
 import styles from './products.module.scss';
 import { Badge } from '@uikit/badge';
-import { IconRounded } from '@uikit/icon/_rounded';
 import { Poster } from '@uikit/poster';
 import { ButtonLink } from '@uikit/button/_link';
 import { Button } from '@uikit/button';
 import { configuration } from '@/configuration';
 import { useUserStore, useModalStore, useProductStore } from '@/store';
 import { useIsAdmin } from '@hooks';
+import { ProductsAdminAction } from './_admin-action';
+import { ProductsCustomerAction } from './_customer-action';
 
 const productDefaultImage = configuration.product.defaultImage;
-const productModalType = configuration.modal.types.productModal;
+const { productModal: productModalType, dialogModal } =
+  configuration.modal.types;
 
 export const ProductsItem = ({ product }) => {
   const user = useUserStore((state) => state.user);
-  const updateProduct = useProductStore((state) => state.update);
+  const { update: updateProduct, delete: deleteProduct } = useProductStore(
+    (state) => state
+  );
   const { open: openModal, close: closeModal } = useModalStore(
     (state) => state
   );
@@ -25,6 +29,18 @@ export const ProductsItem = ({ product }) => {
       action: updateProductItem,
       product,
     });
+  };
+
+  const openDeleteProductModal = () => {
+    openModal(dialogModal, {
+      title: 'Are you sure you want to delete the product?',
+      action: deleteProductItem,
+    });
+  };
+
+  const deleteProductItem = () => {
+    deleteProduct(product.id);
+    closeModal(dialogModal);
   };
 
   const updateProductItem = (data) => {
@@ -39,14 +55,14 @@ export const ProductsItem = ({ product }) => {
       <div className={styles['products__item__header']}>
         <Badge type="secondary">-59%</Badge>
 
-        <IconRounded
-          variant={isAdmin ? 'edit' : 'heart'}
-          className={styles['products__item__icon']}
-          onClick={isAdmin ? openProductModal : handleCustomerClick}
-          color="accent"
-          size="small"
-          background="light"
-        />
+        {isAdmin ? (
+          <ProductsAdminAction
+            onDeleteClick={openDeleteProductModal}
+            onEditClick={openProductModal}
+          />
+        ) : (
+          <ProductsCustomerAction onLikeClick={handleCustomerClick} />
+        )}
       </div>
 
       <Poster
