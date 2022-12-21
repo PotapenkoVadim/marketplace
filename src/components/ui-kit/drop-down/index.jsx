@@ -1,7 +1,12 @@
 import styles from './drop-down.module.scss';
 import { useState, useEffect, useRef, Fragment } from 'react';
 
-export const DropDown = ({ children, menu, isForciblyHide, contentClassName }) => {
+export const DropDown = ({
+  children,
+  menu,
+  isForciblyHide,
+  contentClassName,
+}) => {
   const dropDownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
