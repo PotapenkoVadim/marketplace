@@ -41,6 +41,7 @@
   }
 
   @media (max-width: $mobile) {
+    &__dropdown { right: -70px !important; }
     &__actions { gap: 8px; }
     &__col { flex: 100%; }
     &__header {

@@ -44,7 +44,10 @@ export const LayoutHeaderCart = ({ isHideMenu }) => {
   }, [cart, products]);
 
   return (
-    <DropDown isForciblyHide={isHideMenu} menu={menu}>
+    <DropDown
+      contentClassName={styles['layout__dropdown']}
+      isForciblyHide={isHideMenu}
+      menu={menu}>
       <IconRounded
         className={styles['layout__header__bag']}
         variant="bag"

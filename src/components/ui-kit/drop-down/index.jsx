@@ -1,7 +1,7 @@
 import styles from './drop-down.module.scss';
 import { useState, useEffect, useRef, Fragment } from 'react';
 
-export const DropDown = ({ children, menu, isForciblyHide }) => {
+export const DropDown = ({ children, menu, isForciblyHide, contentClassName }) => {
   const dropDownRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,9 +38,11 @@ export const DropDown = ({ children, menu, isForciblyHide }) => {
       </div>
 
       <div
-        className={`${styles['dropdown__content']} ${
-          !isOpen && 'visually-hidden'
-        }`}
+        className={`
+          ${styles['dropdown__content']}
+          ${contentClassName ?? ''}
+          ${!isOpen && 'visually-hidden'}
+        `}
       >
         {menu.map((item) => (
           <Fragment key={item.key}>{item.node}</Fragment>
