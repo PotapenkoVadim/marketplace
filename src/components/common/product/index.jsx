@@ -1,4 +1,4 @@
-import styles from './products.module.scss';
+import styles from './product.module.scss';
 import { Badge } from '@uikit/badge';
 import { Poster } from '@uikit/poster';
 import { ButtonLink } from '@uikit/button/_link';
@@ -13,7 +13,7 @@ const productDefaultImage = configuration.product.defaultImage;
 const { productModal: productModalType, dialogModal } =
   configuration.modal.types;
 
-export const ProductsItem = ({ product }) => {
+export const Product = ({ product }) => {
   const user = useUserStore((state) => state.user);
   const { update: updateProduct, delete: deleteProduct } = useProductStore(
     (state) => state
@@ -51,8 +51,8 @@ export const ProductsItem = ({ product }) => {
   const handleCustomerClick = () => {};
 
   return (
-    <div className={styles['products__item']}>
-      <div className={styles['products__item__header']}>
+    <div className={styles['product']}>
+      <div className={styles['product__header']}>
         <Badge type="secondary">-59%</Badge>
 
         {isAdmin ? (
@@ -66,18 +66,18 @@ export const ProductsItem = ({ product }) => {
       </div>
 
       <Poster
-        className={styles['products__item__poster']}
+        className={styles['product__poster']}
         source={productDefaultImage}
       />
 
-      <div className={styles['products__item__price']}>
+      <div className={styles['product__price']}>
         <Badge>Audio Devices</Badge>
         <span>₦{product.price}</span>
       </div>
 
-      <div className={styles['products__item__title']}>{product.name}</div>
+      <div className={styles['product__title']}>{product.name}</div>
 
-      <div className={styles['products__item__actions']}>
+      <div className={styles['product__actions']}>
         <ButtonLink>Add to Cart</ButtonLink>
         <Button size="large" variant="primary">
           Buy Now
