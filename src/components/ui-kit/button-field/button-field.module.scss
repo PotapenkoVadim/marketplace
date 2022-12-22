@@ -13,6 +13,11 @@
 
   &__field:focus ~ &__placeholder { font-size: 0.6rem; top: 18px; color: $accent; }
 
+  @media (max-width: $mobile) {
+    &__button { padding: 20px; }
+    &__placeholder { font-size: 0.80rem; }
+  }
+
   @media (max-width: $mobile-small) {
     &__button { padding: 20px 0; }
   }
