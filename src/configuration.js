@@ -90,6 +90,7 @@ export const configuration = {
     types: {
       productModal: 'productModal',
       dialogModal: 'dialogModal',
+      notificationModal: 'notificationModal',
     },
   },
   product: {

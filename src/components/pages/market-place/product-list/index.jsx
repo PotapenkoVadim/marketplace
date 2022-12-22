@@ -3,7 +3,7 @@ import { Container } from '@components/common/container';
 import { Products } from '@components/common/products';
 import { IconRounded } from '@uikit/icon/_rounded';
 import { useIsAdmin } from '@hooks';
-import { useUserStore, useModalStore, useProductStore } from '@/store';
+import { useUserStore, useModalStore, useProductStore } from '@store';
 import { configuration } from '@/configuration';
 import { generateID } from '@/utils';
 

@@ -4,6 +4,7 @@ import { HomePageSubscribe } from '@components/pages/home/subscribe';
 import { ProductModal } from '@components/common/product-modal';
 import { configuration } from '@/configuration';
 import { DialogModal } from '@components/common/dialog-modal';
+import { NotificationModal } from '@components/common/notification-modal';
 
 const { topDeals: topDealsSectionID, bestSelling: bestSellingSectionID } =
   configuration.homePage.sectionIDs;
@@ -21,6 +22,7 @@ export const HomePage = () => {
 
       <ProductModal />
       <DialogModal />
+      <NotificationModal />
     </>
   );
 };

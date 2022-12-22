@@ -1,6 +1,6 @@
 import styles from './modal.module.scss';
 import { IconRounded } from '@uikit/icon/_rounded';
-import { useModalStore } from '@/store';
+import { useModalStore } from '@store';
 
 export const Modal = ({ type, children, title }) => {
   const [modal, close] = useModalStore((state) => [state[type], state.close]);

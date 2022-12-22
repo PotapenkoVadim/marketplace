@@ -3,7 +3,7 @@ import { ButtonLink } from '@uikit/button/_link';
 import { Button } from '@uikit/button';
 import { useIsCustomer } from '@hooks';
 
-export const ProductCustomerActions = ({ user, onAddToCart }) => {
+export const ProductCustomerActions = ({ user, onAddToCart, onBuyProduct }) => {
   const isCustomer = useIsCustomer(user);
 
   return (
@@ -11,7 +11,7 @@ export const ProductCustomerActions = ({ user, onAddToCart }) => {
       {isCustomer && (
         <div className={styles['product__actions']}>
           <ButtonLink onClick={onAddToCart}>Add to Cart</ButtonLink>
-          <Button size="large" variant="primary">
+          <Button onClick={onBuyProduct} size="large" variant="primary">
             Buy Now
           </Button>
         </div>

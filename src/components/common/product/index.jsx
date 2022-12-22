@@ -7,14 +7,17 @@ import {
   useModalStore,
   useProductStore,
   useCartStore,
-} from '@/store';
+} from '@store';
 import { ProductsAdminIcons } from './_admin-icons';
 import { ProductsCustomerIcons } from './_customer-icons';
 import { ProductCustomerActions } from './_customer-actions';
 
 const productDefaultImage = configuration.product.defaultImage;
-const { productModal: productModalType, dialogModal } =
-  configuration.modal.types;
+const {
+  productModal: productModalType,
+  dialogModal,
+  notificationModal,
+} = configuration.modal.types;
 
 export const Product = ({ product, className }) => {
   const user = useUserStore((state) => state.user);
@@ -68,6 +71,21 @@ export const Product = ({ product, className }) => {
     closeModal(dialogModal);
   };
 
+  const openBuyProductModal = () => {
+    openModal(dialogModal, {
+      title: 'Do you want to buy product?',
+      action: buyProduct,
+      buttonText: 'Correct',
+    });
+  };
+
+  const buyProduct = () => {
+    closeModal(dialogModal);
+    openModal(notificationModal, {
+      notification: `Congratulations! You've bought ${product.name}!`,
+    });
+  };
+
   return (
     <div className={`${styles['product']} ${className ?? ''}`}>
       <div className={styles['product__header']}>
@@ -93,7 +111,11 @@ export const Product = ({ product, className }) => {
       </div>
 
       <div className={styles['product__title']}>{product.name}</div>
-      <ProductCustomerActions onAddToCart={openAddToCartModal} user={user} />
+      <ProductCustomerActions
+        onBuyProduct={openBuyProductModal}
+        onAddToCart={openAddToCartModal}
+        user={user}
+      />
     </div>
   );
 };

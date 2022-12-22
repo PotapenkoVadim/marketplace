@@ -2,7 +2,7 @@ import styles from './dialog-modal.module.scss';
 import { Modal } from '@components/common/modal';
 import { configuration } from '@/configuration';
 import { Button } from '@uikit/button';
-import { useModalStore } from '@/store';
+import { useModalStore } from '@store';
 
 const modalType = configuration.modal.types.dialogModal;
 

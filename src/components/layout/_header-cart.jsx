@@ -5,13 +5,46 @@ import { ProductMinified } from '@components/common/product/_minified';
 import { DropDown } from '@uikit/drop-down';
 import { Button } from '@uikit/button';
 import { Notification } from '@uikit/notification';
-import { useCartStore, useProductStore } from '@store';
+import { useCartStore, useProductStore, useModalStore } from '@store';
+import { configuration } from '@/configuration';
+
+const { dialogModal, notificationModal } = configuration.modal.types;
 
 export const LayoutHeaderCart = ({ isHideMenu }) => {
   const [menu, setMenu] = useState([]);
 
   const { cart, clear: clearProdcutInCart } = useCartStore((state) => state);
   const products = useProductStore((state) => state.products);
+  const { open: openModal, close: closeModal } = useModalStore(
+    (state) => state
+  );
+
+  const openBuyProductsModal = () => {
+    openModal(dialogModal, {
+      title: 'Do you want to buy selected products?',
+      action: buyProducts,
+      buttonText: 'Correct',
+    });
+  };
+
+  const buyProducts = () => {
+    const productsPrice = cart.reduce((acc, item) => {
+      const findedProduct = products.find(
+        (product) => product.id === item.productID
+      );
+      if (findedProduct) {
+        acc += Number(findedProduct.price) * item.count;
+      }
+
+      return acc;
+    }, 0);
+
+    clearProdcutInCart();
+    closeModal(dialogModal);
+    openModal(notificationModal, {
+      notification: `Congratulations! You bought products for ₦${productsPrice}!`,
+    });
+  };
 
   useEffect(() => {
     if (cart.length) {
@@ -30,7 +63,14 @@ export const LayoutHeaderCart = ({ isHideMenu }) => {
         ...cartMenuList,
         {
           id: 'buy',
-          node: <Button className={styles['layout__bag-button']}>Buy</Button>,
+          node: (
+            <Button
+              onClick={openBuyProductsModal}
+              className={styles['layout__bag-button']}
+            >
+              Buy
+            </Button>
+          ),
         },
         {
           id: 'clear',

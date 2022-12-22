@@ -2,7 +2,7 @@ import styles from './product-modal.module.scss';
 import { useState, useEffect } from 'react';
 import { Modal } from '@components/common/modal';
 import { ProductForm } from '@components/common/product-form';
-import { useModalStore } from '@/store';
+import { useModalStore } from '@store';
 import { configuration } from '@/configuration';
 
 const modalType = configuration.modal.types.productModal;

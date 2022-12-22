@@ -7,7 +7,7 @@ import { IconRounded } from '@uikit/icon/_rounded';
 import { configuration } from '@/configuration';
 import { useHeaderHiding, useIsCustomer } from '@hooks';
 import { LayoutHeaderAvatar } from './_header-avatar';
-import { useUserStore } from '@/store';
+import { useUserStore } from '@store';
 import { LayoutHeaderCart } from './_header-cart';
 
 const routes = configuration.routes;

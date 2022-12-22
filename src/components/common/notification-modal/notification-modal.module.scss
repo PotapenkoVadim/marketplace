@@ -1,0 +1,6 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.notification-modal { text-align: center; margin: 15px 0;
+  &__text { font-size: 1.2rem; font-weight: bold; color: $black; }
+}

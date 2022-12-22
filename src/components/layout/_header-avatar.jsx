@@ -2,7 +2,7 @@ import styles from './layout.module.scss';
 import { useState, useEffect } from 'react';
 import { DropDown } from '@uikit/drop-down';
 import { Avatar } from '@uikit/avatar';
-import { useUserStore, useCartStore } from '@/store';
+import { useUserStore, useCartStore } from '@store';
 import { useIsAdmin } from '@hooks';
 import { configuration } from '@/configuration';
 
