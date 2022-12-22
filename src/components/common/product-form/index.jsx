@@ -9,8 +9,10 @@ export const ProductForm = ({ onSubmit, productForm, buttonText }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    onSubmit(product);
-    setProduct(productForm);
+    if (product.name.length && product.price.length) {
+      onSubmit(product);
+      setProduct(productForm);
+    }
   };
 
   const handleChange = (event) => {
