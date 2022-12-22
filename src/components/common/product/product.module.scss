@@ -15,7 +15,7 @@
   }
 }
 
-.product-minified { @include flex-align-center; gap: 15px; margin: 20px 0; max-width: 255px;
+.product-minified { @include flex-align-center; gap: 15px; margin: 20px 0; width: 255px;
   &__poster, &__info { flex: 1; }
   &__poster { width: 35px; height: 85px; border-radius: 3px; overflow: hidden; }
   &__title { margin-bottom: 15px; font-size: 0.75rem; }

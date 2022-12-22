@@ -18,7 +18,9 @@ const { productModal: productModalType, dialogModal } =
 
 export const Product = ({ product, className }) => {
   const user = useUserStore((state) => state.user);
-  const addToCart = useCartStore((state) => state.add);
+  const { add: addToCart, remove: removeProductFromCart } = useCartStore(
+    (state) => state
+  );
   const { update: updateProduct, delete: deleteProduct } = useProductStore(
     (state) => state
   );
@@ -42,6 +44,7 @@ export const Product = ({ product, className }) => {
 
   const deleteProductItem = () => {
     deleteProduct(product.id);
+    removeProductFromCart(product.id);
     closeModal(dialogModal);
   };
 

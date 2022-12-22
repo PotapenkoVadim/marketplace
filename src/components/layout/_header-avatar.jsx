@@ -2,7 +2,7 @@ import styles from './layout.module.scss';
 import { useState, useEffect } from 'react';
 import { DropDown } from '@uikit/drop-down';
 import { Avatar } from '@uikit/avatar';
-import { useUserStore } from '@/store';
+import { useUserStore, useCartStore } from '@/store';
 import { useIsAdmin } from '@hooks';
 import { configuration } from '@/configuration';
 
@@ -12,6 +12,7 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
   const [menu, setMenu] = useState([]);
 
   const { user, logIn, logOut } = useUserStore((state) => state);
+  const clearProductsInCart = useCartStore((state) => state.clear);
 
   const isAdmin = useIsAdmin(user);
 
@@ -40,7 +41,10 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
           node: (
             <span
               className={styles['layout__header__menu-link']}
-              onClick={logOut}
+              onClick={() => {
+                clearProductsInCart();
+                logOut();
+              }}
             >
               Log out
             </span>
@@ -73,7 +77,7 @@ export const LayoutHeaderAvatar = ({ isHideMenu }) => {
         },
       ]);
     }
-  }, [user, isAdmin, logIn, logOut]);
+  }, [user, isAdmin, logIn, logOut, clearProductsInCart]);
 
   return (
     <DropDown isForciblyHide={isHideMenu} menu={menu}>

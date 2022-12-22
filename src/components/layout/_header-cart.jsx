@@ -10,7 +10,7 @@ import { useCartStore, useProductStore } from '@store';
 export const LayoutHeaderCart = ({ isHideMenu }) => {
   const [menu, setMenu] = useState([]);
 
-  const cart = useCartStore((state) => state.cart);
+  const { cart, clear: clearProdcutInCart } = useCartStore((state) => state);
   const products = useProductStore((state) => state.products);
 
   useEffect(() => {
@@ -29,19 +29,31 @@ export const LayoutHeaderCart = ({ isHideMenu }) => {
       setMenu([
         ...cartMenuList,
         {
-          id: 2,
+          id: 'buy',
           node: <Button className={styles['layout__bag-button']}>Buy</Button>,
+        },
+        {
+          id: 'clear',
+          node: (
+            <Button
+              variant="secondary"
+              onClick={clearProdcutInCart}
+              className={styles['layout__bag-button']}
+            >
+              Clear
+            </Button>
+          ),
         },
       ]);
     } else {
       setMenu([
         {
-          id: 1,
+          id: 'notification',
           node: <Notification text="Cart is empty" />,
         },
       ]);
     }
-  }, [cart, products]);
+  }, [cart, products, clearProdcutInCart]);
 
   return (
     <DropDown
