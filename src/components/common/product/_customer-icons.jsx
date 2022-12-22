@@ -2,8 +2,10 @@ import styles from './product.module.scss';
 import { IconRounded } from '@uikit/icon/_rounded';
 import { useIsCustomer } from '@hooks';
 
-export const ProductsCustomerIcons = ({ user, onLikeClick }) => {
+export const ProductsCustomerIcons = ({ user }) => {
   const isCustomer = useIsCustomer(user);
+
+  const handleCustomerClick = () => {};
 
   return (
     <>
@@ -12,7 +14,7 @@ export const ProductsCustomerIcons = ({ user, onLikeClick }) => {
           <IconRounded
             variant={'heart'}
             className={styles['product__icon']}
-            onClick={onLikeClick}
+            onClick={handleCustomerClick}
             color="accent"
             size="small"
             background="light"
