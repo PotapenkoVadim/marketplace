@@ -1,8 +1,8 @@
-import customerAvatarImage from './static/avatar.png';
-import defaultAvatarImage from './static/default-avatar.jpg';
-import adminAvatarImage from './static/admin-avatar.jpg';
-import homePagePoster from './static/introduce.png';
-import productDefaultImage from './static/test-product.png';
+import customerAvatarImage from './static/avatar.webp';
+import defaultAvatarImage from './static/default-avatar.webp';
+import adminAvatarImage from './static/admin-avatar.webp';
+import homePagePoster from './static/introduce.webp';
+import productDefaultImage from './static/test-product.webp';
 
 const homePage = DEVELOPMENT ? '/' : '/marketplace/';
 const paths = {
